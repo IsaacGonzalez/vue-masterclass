@@ -9,13 +9,28 @@
 </head>
 <body>
     <div id="app">
-        <h1>Vue Masterclass</h1>
+        <h1 id="top" >Vue Masterclass</h1>
 
+        <p v-if="visto" > {{ mensaje }} </p>
+        <button @click="invertirMensaje" :disabled="deshabilitado" >
+            Invertir mensaje
+        </button>
+
+        <h2>Favoritos {{ articulos_count }} </h2>
+        <ul>
+            <articulo v-for="favorito in compras" :articulo="favorito"></articulo>
+        </ul>
+
+        <h2>Más Directivas</h2>
+
+        <a :href="url"> Click Me! </a>
         <p>
-            {{ mensaje }}
+            <span>{{ fecha }}</span>
         </p>
+        
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="components/articulo.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
